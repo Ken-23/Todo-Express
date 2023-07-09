@@ -8,7 +8,7 @@ todoExpressApp.use(bodyParser.json());
 
 todoExpressApp.use(bodyParser.urlencoded({ extended: false }));
 
-const PORT_NUMBER = 8000;
+const PORT_NUMBER = process.env.PORT ?? 8000;
 
 todoExpressApp.get("/", (request, response) => {
   response.sendFile(__dirname + "/index.html");
