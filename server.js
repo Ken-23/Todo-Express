@@ -3,10 +3,13 @@ const express = require("express");
 const todoExpressApp = express();
 
 const bodyParser = require("body-parser");
+const connectDB = require("./config/db");
 
 todoExpressApp.use(bodyParser.json());
 
 todoExpressApp.use(bodyParser.urlencoded({ extended: false }));
+
+connectDB();
 
 const PORT_NUMBER = process.env.PORT ?? 8000;
 
